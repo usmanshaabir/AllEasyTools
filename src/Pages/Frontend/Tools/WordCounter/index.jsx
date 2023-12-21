@@ -1,10 +1,10 @@
 import React from 'react'
-import Home from './Home'
+import Counter from './Counter'
 
 export default function index() {
     return (
         <>
-            <Home />
+            <Counter />
         </>
     )
 }
