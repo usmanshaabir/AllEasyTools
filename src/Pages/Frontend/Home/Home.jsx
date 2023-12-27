@@ -3,6 +3,7 @@ import "../../../Scss/_home.scss";
 import Button from 'react-bootstrap/Button';
 import wordCounters from "../../../Assets/Images/word.png";
 import arrow from "../../../Assets/Images/right-arrow.png";
+import ageCalculator from "../../../Assets/Images/calculator.png";
 import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
@@ -11,6 +12,10 @@ export default function Home() {
 
   const handleWordCounter = () => {
     navigation('/wordcounter')
+  }
+  const handleAgeCalcultor = () => {
+    navigation('/agecalcultor')
+
   }
   return (
     <>
@@ -26,9 +31,9 @@ export default function Home() {
             <p className='' style={{ color: "#5B5B5B" }}>Take advantage of our PDF tools to process digital documents with the highest quality results on every device and platform</p>
           </div>
         </div>
-        <div className="row">
+        <div className="row mt-5">
           <div className="col-sm-4 mb-3 mb-sm-0">
-            <div className="card" style={{ width: "350px" }} onClick={handleWordCounter}>
+            <div className="card" style={{ width: "355px" }} onClick={handleWordCounter}>
               <div className="card-body d-flex p-4 justify-content-between align-items-center hover-effect rounded-2">
                 <div className='d-flex align-items-center'>
                   <img src={wordCounters} className='me-2 mb-auto' style={{ width: "35px" }} alt="wordCounters not found" />
@@ -44,13 +49,13 @@ export default function Home() {
             </div>
           </div>
           <div className="col-sm-4 mb-3 mb-sm-0">
-            <div className="card" style={{ width: "350px" }}>
+            <div className="card" style={{ width: "355px" }} onClick={handleAgeCalcultor}>
               <div className="card-body d-flex p-4 justify-content-between align-items-center hover-effect rounded-2">
                 <div className='d-flex align-items-center'>
-                  <img src={wordCounters} className='me-2 mb-auto' style={{ width: "35px" }} alt="wordCounters not found" />
+                  <img src={ageCalculator} className='me-2 mb-auto' style={{ width: "35px" }} alt="wordCounters not found" />
                   <div>
-                    <h5 className="card-title">Word Counter</h5>
-                    <p className="card-text">Count words effortlessly with our efficient Word Counter tool.</p>
+                    <h5 className="card-title">Age Calculator</h5>
+                    <p className="card-text">Craft an age calculator using birthdate to reveal the current age.</p>
                   </div>
                 </div>
                 <div className='mt-5'>
@@ -60,10 +65,10 @@ export default function Home() {
             </div>
           </div>
           <div className="col-sm-4  mb-3 mb-sm-0">
-            <div className="card" style={{ width: "350px" }}>
+            <div className="card" style={{ width: "355px" }}>
               <div className="card-body d-flex p-4 justify-content-between align-items-center hover-effect rounded-2">
                 <div className='d-flex align-items-center'>
-                  <img src={wordCounters} className='me-2 mb-auto' style={{ width: "35px" }} alt="wordCounters not found" />
+                  <img src={ageCalculator} className='me-2 mb-auto' style={{ width: "35px" }} alt="ageCalculator logo not found" />
                   <div>
                     <h5 className="card-title">Word Counter</h5>
                     <p className="card-text">Count words effortlessly with our efficient Word Counter tool.</p>
