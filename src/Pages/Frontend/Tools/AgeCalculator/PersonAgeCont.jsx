@@ -8,15 +8,15 @@ export default function PersonAgeCont() {
   const [state, setState] = useState(initState);
   console.log("test", state.date);
   const [addTime, setAddTime] = useState(false);
-  const [dateCalculate, setDateCalculate] = useState(getDefaultDate());
+  const [dateCalculate, setDateCalculate] = useState("0 years , 0 months , 0 days");
+  // use for month and days
+  const [month, setMonth] = useState("0 months , 0 days")
+  // use for week days and hours
+  const [weeks, setWeeks] = useState(0)
+  const [days, setDays] = useState(0)
+  const [hours, setHours] = useState(0)
 
-  function getDefaultDate() {
-    const today = new Date();
-    const defaultDate = `${today.getFullYear()} years, ${today.getMonth() + 1} months, ${today.getDate()} days`;
-    return defaultDate;
-  }
-
-
+  console.log("D", weeks)
   const handleChange = (event) => {
     setState((preState) => ({ ...preState, [event.target.name]: event.target.value }))
   }
@@ -69,8 +69,24 @@ export default function PersonAgeCont() {
     const months = ageDate.getUTCMonth();
     const days = ageDate.getUTCDate() - 1; // Corrected: getUTCDate() instead of getUTCDay()
 
+    // time Calculate 
+    const timeDifferenceInSecond = Math.floor((currentDate.getTime() - userSelectedDate.getTime()) / 1000)
+
+    // Calculate weeks, days, hours
+    const weeks = Math.floor(timeDifferenceInSecond / (7 * 24 * 3600))
+    const RemainingSecond = timeDifferenceInSecond % (7 * 24 * 3600)
+    const remainingDays = Math.floor(RemainingSecond / (24 * 3600))
+    const remainingHours = Math.floor(RemainingSecond % (24 * 3600))
+
+    // Set the state
+    setWeeks(weeks);
+    setDays(remainingDays);
+    setHours(remainingHours);
+
     // Format the result
     const formattedAge = `${years} years, ${months} months, ${days} days`;
+    const monthlyFormattedAge = `${months} months, ${days} days`;
+    setMonth(monthlyFormattedAge);
     setDateCalculate(formattedAge);
 
     // Finaly Time Function running from here
@@ -89,6 +105,16 @@ export default function PersonAgeCont() {
     const userTotalTime = `${hours} hours, ${minutes} minutes, ${seconds} seconds`;
     setUserBirthTime(userTotalTime);
   };
+
+  const AllDays = new Date();
+
+  const today = AllDays.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric"
+  });
+  console.log("today fff", today)
+
 
   const [userBirthTime, setUserBirthTime] = useState("")
 
@@ -137,37 +163,37 @@ export default function PersonAgeCont() {
               <h5 className='mb-0'>Your Age is :</h5>
               <div className='d-flex justify-content-between'>
                 <div>{dateCalculate}</div>
-                <div>December 12, 2021</div>
+                <div>{today}</div>
               </div>
               <h5 className='mb-0 mt-3' >Your Age in Month is:</h5>
               <div className='d-flex justify-content-between'>
-                <div>32 years , 11 Month , 21 days</div>
-                <div>December 12, 2021</div>
+                <div>{month}</div>
+                <div>{today}</div>
               </div>
               <h5 className='mb-0 mt-3'>Your Age in Week is:</h5>
               <div className='d-flex justify-content-between'>
-                <div>32 years , 11 Month , 21 days</div>
-                <div>December 12, 2021</div>
+                <div>{`${weeks} Weeks , ${days} Days , ${hours} Hours`}</div>
+                <div>{today}</div>
               </div>
               <h5 className='mb-0 mt-3'>Your Age in Days is:</h5>
               <div className='d-flex justify-content-between'>
                 <div>32 years , 11 Month , 21 days</div>
-                <div>December 12, 2021</div>
+                <div>{today}</div>
               </div>
               <h5 className='mb-0 mt-3'>Your Age in Hours is:</h5>
               <div className='d-flex justify-content-between'>
                 <div>32 years , 11 Month , 21 days</div>
-                <div>December 12, 2021</div>
+                <div>{today}</div>
               </div>
               <h5 className='mb-0 mt-3'>Your Age in Minutes is:</h5>
               <div className='d-flex justify-content-between'>
                 <div>32 years , 11 Month , 21 days</div>
-                <div>December 12, 2021</div>
+                <div>{today}</div>
               </div>
               <h5 className='mb-0 mt-3'>Your Age in Seconds is:</h5>
               <div className='d-flex justify-content-between'>
                 <div>32 years , 11 Month , 21 days</div>
-                <div>December 12, 2021</div>
+                <div>{today}</div>
               </div>
 
               <div className='text-end mt-5'>

@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button';
 import wordCounters from "../../../Assets/Images/word.png";
 import arrow from "../../../Assets/Images/right-arrow.png";
 import ageCalculator from "../../../Assets/Images/calculator.png";
+import Password from "../../../Assets/Images/device.png";
+import RecaptchaImage from "../../../Assets/Images/captcha.png";
 import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
@@ -15,7 +17,10 @@ export default function Home() {
   }
   const handleAgeCalcultor = () => {
     navigation('/agecalcultor')
+  }
 
+  const handlePasswordGen = () => {
+    navigation('/password')
   }
   return (
     <>
@@ -31,6 +36,7 @@ export default function Home() {
             <p className='' style={{ color: "#5B5B5B" }}>Take advantage of our PDF tools to process digital documents with the highest quality results on every device and platform</p>
           </div>
         </div>
+        {/* First Row (Word Counter , Age Calculater , Password Generater) */}
         <div className="row mt-5">
           <div className="col-sm-4 mb-3 mb-sm-0">
             <div className="card" style={{ width: "355px" }} onClick={handleWordCounter}>
@@ -65,13 +71,67 @@ export default function Home() {
             </div>
           </div>
           <div className="col-sm-4  mb-3 mb-sm-0">
-            <div className="card" style={{ width: "355px" }}>
+            <div className="card" style={{ width: "355px" }} onClick={handlePasswordGen}>
               <div className="card-body d-flex p-4 justify-content-between align-items-center hover-effect rounded-2">
                 <div className='d-flex align-items-center'>
-                  <img src={ageCalculator} className='me-2 mb-auto' style={{ width: "35px" }} alt="ageCalculator logo not found" />
+                  <img src={Password} className='me-2 mb-auto' style={{ width: "35px" }} alt="Password logo not found" />
                   <div>
-                    <h5 className="card-title">Word Counter</h5>
-                    <p className="card-text">Count words effortlessly with our efficient Word Counter tool.</p>
+                    <h5 className="card-title">Password Generator</h5>
+                    <p className="card-text">Generate strong  passwords with our Password Generator tool.</p>
+                  </div>
+                </div>
+                <div className='mt-5'>
+                  <img src={arrow} alt="" style={{ width: "15px" }} />
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* ... (similar adjustments for other columns) */}
+        </div>
+
+        {/* First Row (ReCaptcha ) */}
+        <div className="row mt-5">
+          {/* ReCaptcha Generater */}
+          <div className="col-sm-4 mb-3 mb-sm-0">
+            <div className="card" style={{ width: "355px" }} onClick={handle}>
+              <div className="card-body d-flex p-4 justify-content-between align-items-center hover-effect rounded-2">
+                <div className='d-flex align-items-center'>
+                  <img src={RecaptchaImage} className='me-2 mb-auto' style={{ width: "35px" }} alt="RecaptchaImage not found" />
+                  <div>
+                    <h5 className="card-title">ReCaptcha Generater</h5>
+                    <p className="card-text">Generate ReCaptcha effortlessly with our efficient Generator tool.</p>
+                  </div>
+                </div>
+                <div className='mt-5'>
+                  <img src={arrow} alt="" style={{ width: "15px" }} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4 mb-3 mb-sm-0">
+            <div className="card" style={{ width: "355px" }} onClick={handleAgeCalcultor}>
+              <div className="card-body d-flex p-4 justify-content-between align-items-center hover-effect rounded-2">
+                <div className='d-flex align-items-center'>
+                  <img src={ageCalculator} className='me-2 mb-auto' style={{ width: "35px" }} alt="wordCounters not found" />
+                  <div>
+                    <h5 className="card-title">Age Calculator</h5>
+                    <p className="card-text">Craft an age calculator using birthdate to reveal the current age.</p>
+                  </div>
+                </div>
+                <div className='mt-5'>
+                  <img src={arrow} alt="" style={{ width: "15px" }} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4  mb-3 mb-sm-0">
+            <div className="card" style={{ width: "355px" }} onClick={handlePasswordGen}>
+              <div className="card-body d-flex p-4 justify-content-between align-items-center hover-effect rounded-2">
+                <div className='d-flex align-items-center'>
+                  <img src={Password} className='me-2 mb-auto' style={{ width: "35px" }} alt="Password logo not found" />
+                  <div>
+                    <h5 className="card-title">Password Generator</h5>
+                    <p className="card-text">Generate strong  passwords with our Password Generator tool.</p>
                   </div>
                 </div>
                 <div className='mt-5'>

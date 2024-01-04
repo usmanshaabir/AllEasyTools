@@ -15,6 +15,11 @@ body {
     color: white;
 }
 
+.activeCard {
+    background: radial-gradient(395.96% 124.68% at 14.79% 14.76%, #00B88D 0%, #01B6CC 100%);
+    color: white;
+}
+
 .footer-background {
     background: radial-gradient(86.72% 86.72% at 50% 28.12%, rgba(170, 170, 170, 0.10) 0%, rgba(227, 227, 227, 0.00) 100%), rgba(113, 113, 113, 0.15);
     margin-top: 150px;
