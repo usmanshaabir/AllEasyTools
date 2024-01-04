@@ -4,6 +4,7 @@ import Home from "./Home";
 import Header from '../../Component/Header'
 import WordCounter from './Tools/WordCounter'
 import AgeCalculator from './Tools/AgeCalculator'
+import Recaptcha from './Tools/Recaptcha'
 import Footer from '../../Component/Footer';
 import PasswordGenerator from "../../Pages/Frontend/Tools/PasswordGen"
 
@@ -16,6 +17,7 @@ export default function index() {
         <Route path='wordcounter' element={<WordCounter />} />
         <Route path='agecalcultor' element={<AgeCalculator />} />
         <Route path='password' element={<PasswordGenerator />} />
+        <Route path='recaptcha' element={<Recaptcha />} />
       </Routes>
       <Footer />
     </>

@@ -22,8 +22,14 @@ export default function Home() {
   const handlePasswordGen = () => {
     navigation('/password')
   }
+
+  const handleRecaptch = () => {
+    navigation("recaptcha")
+  }
+
+
   return (
-    <>
+    < div className="bannarImage">
       <div className="container">
         <div className="row">
           <div className='d-flex justify-content-center mt-5 pt-5'>
@@ -36,7 +42,7 @@ export default function Home() {
             <p className='' style={{ color: "#5B5B5B" }}>Take advantage of our PDF tools to process digital documents with the highest quality results on every device and platform</p>
           </div>
         </div>
-        {/* First Row (Word Counter , Age Calculater , Password Generater) */}
+        {/* First Row (Word Counter, Age Calculater, Password Generater) */}
         <div className="row mt-5">
           <div className="col-sm-4 mb-3 mb-sm-0">
             <div className="card" style={{ width: "355px" }} onClick={handleWordCounter}>
@@ -89,11 +95,11 @@ export default function Home() {
           {/* ... (similar adjustments for other columns) */}
         </div>
 
-        {/* First Row (ReCaptcha ) */}
+        {/* First Row (ReCaptcha , ) */}
         <div className="row mt-5">
           {/* ReCaptcha Generater */}
           <div className="col-sm-4 mb-3 mb-sm-0">
-            <div className="card" style={{ width: "355px" }} onClick={handle}>
+            <div className="card" style={{ width: "355px" }} onClick={handleRecaptch}>
               <div className="card-body d-flex p-4 justify-content-between align-items-center hover-effect rounded-2">
                 <div className='d-flex align-items-center'>
                   <img src={RecaptchaImage} className='me-2 mb-auto' style={{ width: "35px" }} alt="RecaptchaImage not found" />
@@ -143,6 +149,6 @@ export default function Home() {
           {/* ... (similar adjustments for other columns) */}
         </div>
       </div>
-    </>
+    </div>
   );
 }

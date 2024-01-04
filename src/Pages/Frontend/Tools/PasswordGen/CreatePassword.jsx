@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
+import checked from "../../../../Assets/Images/checked.png"
 
 export default function CreatePassword() {
 
   const [selectedValue, setSelectedValue] = useState(9);
   const [createPassword, setCreatePassword] = useState("");
   const [complexity, setComplexity] = useState("")
+  const [isCopied, setIsCopied] = useState(true)
 
   const GenerateOption = () => {
     return Array.from({ length: 47 }, (_, index) => (
@@ -89,7 +91,20 @@ export default function CreatePassword() {
       handleGenPasswordTough()
     }
   }
+  // input Copy Function
+  const handleCopyRight = () => {
+    const inputField = document.getElementById("passwordInput");
+    inputField.select();
+    document.execCommand('copy');
+    setIsCopied(false)
 
+    setTimeout(() => {
+      setIsCopied(true)
+      console.log(isCopied, "setTimeout condition");
+    }, 2000)
+    console.log(isCopied, " after setTimeout condition");
+
+  }
 
   return (
     <>
@@ -99,7 +114,7 @@ export default function CreatePassword() {
           <Card body>
             <div class="mb-3 mt-4">
               <label class="form-label fw-semibold">Generate a Password</label>
-              <input type="text" class="form-control" placeholder='J-9!' value={createPassword} />
+              <input type="text" class="form-control" id="passwordInput" placeholder='J-9!' value={createPassword} />
             </div>
             <div className="row mt-4 mb-4">
               <div class="col-md-6">
@@ -118,7 +133,7 @@ export default function CreatePassword() {
               </div>
               <div className='mt-5 text-end'>
                 <button type="button" class="btn fw-semibold me-4 px-4" style={{ backgroundColor: "#FFE3E3", color: "#F15642" }} onClick={handleGeneratePassword}>Generate</button>
-                <button type="button" class="btn btn-success px-4">Copy to Clipboard</button>
+                <button type="button" style={{ width: "15%" }} class="btn btn-success px-4" onClick={handleCopyRight}>{isCopied ? "Copy to Clipboard" : <img src={checked} alt='checked logo not found'></img>}</button>
               </div>
             </div>
           </Card>
