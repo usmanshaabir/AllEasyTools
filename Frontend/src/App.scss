@@ -1,5 +1,6 @@
 body {
     font-family: 'Satoshi', sans-serif !important;
+
 }
 
 @import '~bootstrap/scss/bootstrap';
@@ -38,4 +39,27 @@ body {
     font-weight: 700;
     line-height: 28px;
 
+}
+
+// uppercase to lowercase
+.dotted-border {
+    border-style: dotted;
+    border-width: 2px;
+    padding: 10px;
+    resize: vertical;
+    width: 100%;
+    min-height: 100px;
+}
+
+.pdf-background {
+    background-image: url("../src/Assets/Images/pdf-background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 1px dashed #BABABA;
+    border-radius: 12px;
+    border-width: 3px;
+    // gap: 8px;
+    padding: 40px, 0px !important;
 }

@@ -6,6 +6,8 @@ import arrow from "../../../Assets/Images/right-arrow.png";
 import ageCalculator from "../../../Assets/Images/calculator.png";
 import Password from "../../../Assets/Images/device.png";
 import RecaptchaImage from "../../../Assets/Images/captcha.png";
+import PdfToWord from "../../../Assets/Images/pdf.png";
+import UppercaseToLowercase from "../../../Assets/Images/file.png";
 import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
@@ -26,6 +28,14 @@ export default function Home() {
   const handleRecaptch = () => {
     navigation("recaptcha")
   }
+
+  const handleUppercase = () => {
+    navigation("convertletter")
+  }
+  const handlePdfToWord = () => {
+    navigation("pdftoword")
+  }
+
 
 
   return (
@@ -95,7 +105,7 @@ export default function Home() {
           {/* ... (similar adjustments for other columns) */}
         </div>
 
-        {/* First Row (ReCaptcha , ) */}
+        {/* First Row (ReCaptcha , PDF to Word  ) */}
         <div className="row mt-5">
           {/* ReCaptcha Generater */}
           <div className="col-sm-4 mb-3 mb-sm-0">
@@ -114,14 +124,17 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* PDF to Word */}
+
           <div className="col-sm-4 mb-3 mb-sm-0">
-            <div className="card" style={{ width: "355px" }} onClick={handleAgeCalcultor}>
+            <div className="card" style={{ width: "355px" }} onClick={handlePdfToWord}>
               <div className="card-body d-flex p-4 justify-content-between align-items-center hover-effect rounded-2">
                 <div className='d-flex align-items-center'>
-                  <img src={ageCalculator} className='me-2 mb-auto' style={{ width: "35px" }} alt="wordCounters not found" />
+                  <img src={PdfToWord} className='me-2 mb-auto' style={{ width: "35px" }} alt="PdfToWord not found" />
                   <div>
-                    <h5 className="card-title">Age Calculator</h5>
-                    <p className="card-text">Craft an age calculator using birthdate to reveal the current age.</p>
+                    <h5 className="card-title">PDFs to Word</h5>
+                    <p className="card-text">Create a tool that converts PDFs to Word documents.</p>
                   </div>
                 </div>
                 <div className='mt-5'>
@@ -130,14 +143,17 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* uppercase to lowercase */}
+
           <div className="col-sm-4  mb-3 mb-sm-0">
-            <div className="card" style={{ width: "355px" }} onClick={handlePasswordGen}>
+            <div className="card" style={{ width: "355px" }} onClick={handleUppercase}>
               <div className="card-body d-flex p-4 justify-content-between align-items-center hover-effect rounded-2">
                 <div className='d-flex align-items-center'>
-                  <img src={Password} className='me-2 mb-auto' style={{ width: "35px" }} alt="Password logo not found" />
+                  <img src={UppercaseToLowercase} className='me-2 mb-auto' style={{ width: "35px" }} alt="Uppercase To Lowercase logo not found" />
                   <div>
-                    <h5 className="card-title">Password Generator</h5>
-                    <p className="card-text">Generate strong  passwords with our Password Generator tool.</p>
+                    <h5 className="card-title">Uppercase To Lowercase</h5>
+                    <p className="card-text">Craft a tool to convert uppercase text to lowercase with ease.</p>
                   </div>
                 </div>
                 <div className='mt-5'>
