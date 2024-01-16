@@ -35,6 +35,9 @@ export default function Home() {
   const handlePdfToWord = () => {
     navigation("pdftoword")
   }
+  const handleApi = () => {
+    navigation("api")
+  }
 
 
 
@@ -153,6 +156,22 @@ export default function Home() {
                   <img src={UppercaseToLowercase} className='me-2 mb-auto' style={{ width: "35px" }} alt="Uppercase To Lowercase logo not found" />
                   <div>
                     <h5 className="card-title">Uppercase To Lowercase</h5>
+                    <p className="card-text">Craft a tool to convert uppercase text to lowercase with ease.</p>
+                  </div>
+                </div>
+                <div className='mt-5'>
+                  <img src={arrow} alt="" style={{ width: "15px" }} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4  mb-3 mb-sm-0">
+            <div className="card" style={{ width: "355px" }} onClick={handleApi}>
+              <div className="card-body d-flex p-4 justify-content-between align-items-center hover-effect rounded-2">
+                <div className='d-flex align-items-center'>
+                  <img src={UppercaseToLowercase} className='me-2 mb-auto' style={{ width: "35px" }} alt="Uppercase To Lowercase logo not found" />
+                  <div>
+                    <h5 className="card-title">APi</h5>
                     <p className="card-text">Craft a tool to convert uppercase text to lowercase with ease.</p>
                   </div>
                 </div>

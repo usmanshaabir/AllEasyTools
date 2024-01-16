@@ -9,6 +9,7 @@ import Footer from '../../Component/Footer';
 import PasswordGenerator from "../../Pages/Frontend/Tools/PasswordGen";
 import UppercaseToLowercase from "../../Pages/Frontend/Tools/UppercaseToLowercase";
 import PdfToWord from "../../Pages/Frontend/Tools/PdfToWord";
+import ExampleComponent from "../../Pages/Frontend/Tools/API/ExampleComponent";
 
 export default function index() {
   return (
@@ -23,6 +24,7 @@ export default function index() {
           <Route path='recaptcha' element={<Recaptcha />} />
           <Route path='convertletter' element={<UppercaseToLowercase />} />
           <Route path='pdftoword' element={<PdfToWord />} />
+          <Route path='api' element={<ExampleComponent />} />
         </Routes>
       </main>
       <Footer />
