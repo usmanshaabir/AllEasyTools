@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import PDFTOWord from "../../../../Assets/Images/PFD.png"
 import ArrowButton from "../../../../Assets/Images/chevron-down.png"
 
 export default function ConvertLetter() {
-  const [selectedFile, setSelectedFile] = useState(null);
+  // const [selectedFile, setSelectedFile] = useState(null);
 
-  const handleFileChange = (event) => {
-    // Update state with the selected file
-    setSelectedFile(event.target.files[0]);
-  };
+  // const handleFileChange = (event) => {
+  // Update state with the selected file
+  //   setSelectedFile(event.target.files[0]);
+  // };
 
-  const handleConvertClick = () => {
+  // const handleConvertClick = () => {
 
-  };
+  // };
 
 
   return (
@@ -28,12 +28,12 @@ export default function ConvertLetter() {
               <p>Drag and drop to Upload or Click the button</p>
               <label className="btn btn-success"> Choose PDF File
                 <img src={ArrowButton} className='ms-2' alt="ArrowButton not found" />
-                <input type="file" className="d-none" id="fileInput" onChange={handleFileChange} />
+                <input type="file" className="d-none" id="fileInput" />
               </label>
 
             </div>
             <div className='text-end mt-5'>
-              <Button variant="success" style={{ width: "12%" }} onClick={handleConvertClick} >Convert to Word</Button>
+              <Button variant="success" style={{ width: "12%" }}  >Convert to Word</Button>
             </div>
           </div>
         </div>

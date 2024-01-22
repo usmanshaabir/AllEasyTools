@@ -90,8 +90,8 @@ export default function PersonAgeCont() {
     setDateCalculate(formattedAge);
 
     // Finaly Time Function running from here
-    const currentTime = state.time;
-    const userSelectedTime = selectedTime;
+    // const currentTime = state.time;
+    // const userSelectedTime = selectedTime;
 
     // Calculate the time difference in seconds
     const timeDifferenceInSeconds = Math.floor((currentDate.getTime() - userSelectedDate.getTime()) / 1000);

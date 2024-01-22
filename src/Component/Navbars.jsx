@@ -1,5 +1,6 @@
 import React from 'react';
 import logoImage from "../Assets/Images/Vector.png"
+import { Link } from 'react-router-dom';
 
 export default function Navbars() {
 
@@ -21,8 +22,9 @@ export default function Navbars() {
               </div>
             </div>
             <div>
-              <button type="button" className="btn" data-bs-toggle="button">Location</button>
-              <button type="button" className="btn" data-bs-toggle="button">Contact Us</button>
+              <Link to="auth/login" className="btn btn-light me-3">Sign up</Link>
+              <Link to="" className="btn btn-light">Login up</Link>
+
             </div>
           </div>
         </div>

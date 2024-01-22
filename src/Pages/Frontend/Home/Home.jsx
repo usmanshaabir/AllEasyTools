@@ -35,9 +35,9 @@ export default function Home() {
   const handlePdfToWord = () => {
     navigation("pdftoword")
   }
-  const handleApi = () => {
-    navigation("api")
-  }
+  // const handleApi = () => {
+  //   navigation("api")
+  // }
 
 
 

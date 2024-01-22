@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function CreateRecaptch() {
   const [state, setState] = useState("hgj12HG")
   const [checkRecaptcha, setCheckRecaptcha] = useState({ writeCaptacha: "" })
+  const [checkInput, setCheckInput] = useState(null)
 
   const handleRecaptcha = () => {
     const random = Math.random().toString(36).slice(6)
@@ -19,8 +22,11 @@ export default function CreateRecaptch() {
     console.log("state", state);
     console.log("checkRecaptcha", checkRecaptcha.writeCaptacha);
     if (state === checkRecaptcha.writeCaptacha) {
+      setCheckInput(false)
+      toast("Thats Great❤️.")
       console.log("ok")
     } else {
+      setCheckInput(true)
       console.log(" not ok")
 
     }
@@ -42,8 +48,10 @@ export default function CreateRecaptch() {
                 <Button variant="success" className="ms-3" style={{ width: "16%" }} onClick={handleDone}>Done Recaptcha</Button>
               </div>
             </Card.Body>
+            {checkInput ? <p className='text-danger' style={{ paddingLeft: "29%" }}> please write correct Recaptach </p> : ""}
           </Card>
         </div>
+        <ToastContainer />
       </div>
     </>
   )

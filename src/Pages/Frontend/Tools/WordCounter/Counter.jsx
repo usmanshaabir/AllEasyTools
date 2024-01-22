@@ -114,7 +114,7 @@ export default function Counter() {
 
   return (
     <div>
-      <div className="container">
+      <div className="container mb-5 pb-5">
         <div className="row mt-5 pt-5  ">
           <div className='d-flex justify-content-between'>
             <div>
