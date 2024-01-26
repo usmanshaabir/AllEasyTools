@@ -1,10 +1,22 @@
 import React from 'react';
 import "../../../Scss/_login.scss";
-import loginImage from "../../../Assets/Images/login.png";
+import loginImage from "../../../Assets/Login/Login.png";
 import google from "../../../Assets/Login/google.png";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function LoginPage() {
+  const navigate = useNavigate()
+
+  const handleForget = () => {
+    navigate("/auth/forget")
+  }
+  const handleSignup = () => {
+    navigate("/auth/signup")
+  }
+
+
+
   return (
     <div className="container-fluid ">
       <div className="row ">
@@ -12,36 +24,22 @@ export default function LoginPage() {
           <img src={loginImage} className='img-fluid' alt="login" />
         </div>
 
-        <div className="col-md-6  d-flex justify-content-center align-items-center mt-5 pt-5">
+        <div className="col-md-6 d-flex justify-content-center align-items-center mt-5 pt-5">
           <div>
-            <h2>Get started with <span style={{ color: "#00B887" }}>All Easy Tool</span></h2>
-            <h5 style={{ color: "#929292" }}> Sign up to your profile below</h5>
-            <div>
-              <input type="name" class="form-control mt-5 personStyle" placeholder="First Name" />
-              <input type="name" class="form-control mt-4 personStyle" placeholder="Last Name" />
-              <input type="number" class="form-control mt-4 numberStyle" placeholder="Phone Number" />
+            <h2>Welcome to <span style={{ color: "#00B887" }}>All Easy Tool</span></h2>
+            <h5 className='text-center'>Account</h5>
+            <div className='mt-5 pt-3'>
               <input type="email" class="form-control mt-4 emailStyle" placeholder="Email" />
               <input type="text" class="form-control mt-4 passwordStyle" placeholder="Password" />
-              <input type="text" class="form-control mt-4 passwordStyle" placeholder="Confirm Password" />
-            </div>
-            <div class="form-check mt-4">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-              <label class="form-check-label" for="flexCheckDefault">
-                I agree to the terms and conditions.
-              </label>
-            </div>
-            <div class="form-check mt-3">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-              <label class="form-check-label" for="flexCheckChecked">
-                I’m not Robot
-              </label>
+              <p className='text-end forgetClass mt-3' onClick={handleForget} style={{ cursor: "pointer" }}>Forgot password?</p>
             </div>
             <div class="d-grid gap-2 mt-5">
-              <button class="btn text-light " style={{ background: "linear-gradient(90deg, #00B887 0%, #01B6D3 100%)" }} type="button">Sign Up</button>
+              <button class="btn text-light " style={{ background: "linear-gradient(90deg, #00B887 0%, #01B6D3 100%)" }} type="button">Login</button>
+              <p className='text-center mb-0 mt-4' style={{ color: "#828282" }}>Don't have an account? Setup now</p>
+              <button class="btn" style={{ borderColor: "#00B887", color: "#00B887" }} onClick={handleSignup}>Create Account</button>
               <p className='text-center mb-0'>Or</p>
               <button class="btn btn-light" type="button" style={{ backgroundColor: "#D4D4D4" }}> <img src={google} alt="" /> Sign in with Google</button>
             </div>
-            <p className='text-center mb-0 mt-3'>Alraedy have account? <span className='fw-bold' style={{ color: "#00B887" }}>Log In</span></p>
           </div>
         </div>
       </div>

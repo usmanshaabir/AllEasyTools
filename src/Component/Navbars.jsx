@@ -22,8 +22,8 @@ export default function Navbars() {
               </div>
             </div>
             <div>
-              <Link to="auth/login" className="btn btn-light me-3">Sign up</Link>
-              <Link to="" className="btn btn-light">Login up</Link>
+              <Link to="auth/signup" className="btn btn-light me-3">Sign up</Link>
+              <Link to="auth/login" className="btn btn-light">Login up</Link>
 
             </div>
           </div>
